@@ -2,7 +2,7 @@
 using System.Reflection;
 
 [assembly: AssemblyTitle("Albireo.Base32.Library")]
-[assembly: AssemblyDescription("A library to perform Base32 encoding and decoding")]
+[assembly: AssemblyDescription("A library for Base32 encoding and decoding")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Albireo")]
 [assembly: AssemblyProduct("Albireo.Base32.Library")]
@@ -10,5 +10,5 @@ using System.Reflection;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
-[assembly: AssemblyVersion("1.0.0")]
-[assembly: AssemblyFileVersion("1.0.0")]
+[assembly: AssemblyVersion("1.0.1")]
+[assembly: AssemblyFileVersion("1.0.1")]
