@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Albireo's Base32 encoder and decoder</title>
+    <authors>$author$</authors>
+    <description>$description$</description>
+    <releaseNotes>First usable version.</releaseNotes>
+    <summary>A library for Base32 encoding and decoding.</summary>
+    <projectUrl>https://github.com/kappa7194/base32</projectUrl>
+    <iconUrl>https://i.imgur.com/erCxZ0s.png</iconUrl>
+    <licenseUrl>https://github.com/kappa7194/base32/blob/master/LICENSE.txt</licenseUrl>
+    <copyright>Copyright © 2014 Albireo</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>base32</tags>
+  </metadata>
+</package>
