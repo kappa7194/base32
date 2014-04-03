@@ -10,7 +10,7 @@
     <summary>A library for Base32 encoding and decoding.</summary>
     <projectUrl>https://github.com/kappa7194/base32</projectUrl>
     <iconUrl>https://i.imgur.com/erCxZ0s.png</iconUrl>
-    <licenseUrl>https://github.com/kappa7194/base32/blob/master/LICENSE.txt</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/kappa7194/base32/master/LICENSE.txt</licenseUrl>
     <copyright>Copyright © 2014 Albireo</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>base32</tags>
