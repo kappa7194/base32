@@ -1,10 +1,15 @@
-﻿# C# Base32 encoder and decoder
+﻿# Base32 encoder and decoder
 
 This library implements a Base32 encoder and decoder based upon the standard described in the [RFC 4648].
 
 ## License
 
 This project is licensed under [the MIT license], you can find a copy of the license in the LICENSE.txt file.
+
+## Requirments
+
+- Microsoft Visual Studio 2013
+- Code Contracts
 
 ## Credits
 
