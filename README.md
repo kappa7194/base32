@@ -2,6 +2,8 @@
 
 This library implements a Base32 encoder and decoder based upon the standard described in the [RFC 4648].
 
+A NuGet package is available at https://www.nuget.org/packages/Albireo.Base32/
+
 ## License
 
 This project is licensed under [the MIT license], you can find a copy of the license in the LICENSE.txt file.
