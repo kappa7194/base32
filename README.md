@@ -4,6 +4,13 @@ This library implements a Base32 encoder and decoder based upon the standard des
 
 A NuGet package is available at https://www.nuget.org/packages/Albireo.Base32/
 
+## Status
+
+Master: [![Build status](https://ci.appveyor.com/api/projects/status/r7jsmh98jb49xs4o/branch/master?svg=true)](https://ci.appveyor.com/project/kappa7194/base32/branch/master)
+
+Overall: [![Build status](https://ci.appveyor.com/api/projects/status/r7jsmh98jb49xs4o?svg=true)](https://ci.appveyor.com/project/kappa7194/base32)
+
+
 ## License
 
 This project is licensed under [the MIT license], you can find a copy of the license in the LICENSE.txt file.
