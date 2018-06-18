@@ -1,9 +1,7 @@
-﻿using System.Linq;
-
-namespace Albireo.Base32
+﻿namespace Albireo.Base32
 {
     using System;
-    using System.Diagnostics.Contracts;
+    using System.Linq;
 
     public static class Base32
     {
@@ -15,14 +13,16 @@ namespace Albireo.Base32
         public static string Encode(byte[] input)
         {
             if (input == null)
-              throw new ArgumentNullException(nameof(input));
+            {
+                throw new ArgumentNullException(nameof(input));
+            }
 
             if (input.Length == 0)
             {
                 return string.Empty;
             }
 
-            var output = new char[(int) decimal.Ceiling((input.Length / (decimal) BitsInBlock)) * BitsInByte];
+            var output = new char[(int) decimal.Ceiling(input.Length / (decimal) BitsInBlock) * BitsInByte];
             var position = 0;
             byte workingByte = 0, remainingBits = BitsInBlock;
 
@@ -57,11 +57,15 @@ namespace Albireo.Base32
 
         public static byte[] Decode(string input)
         {
-          if (input == null)
-            throw new ArgumentNullException(nameof(input));
+            if (input == null)
+            {
+                throw new ArgumentNullException(nameof(input));
+            }
 
-          if (!input.ToCharArray().All(x => Alphabet.IndexOf(x) >= 0 || x == Padding))
-            throw new ArgumentException(nameof(input));
+            if (!input.ToCharArray().All(x => Alphabet.IndexOf(x) >= 0 || x == Padding))
+            {
+                throw new ArgumentException(nameof(input));
+            }
 
             if (string.IsNullOrEmpty(input))
             {
