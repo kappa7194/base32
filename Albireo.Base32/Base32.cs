@@ -1,4 +1,6 @@
-﻿namespace Albireo.Base32
+﻿using System.Linq;
+
+namespace Albireo.Base32
 {
     using System;
     using System.Diagnostics.Contracts;
@@ -12,8 +14,8 @@
 
         public static string Encode(byte[] input)
         {
-            Contract.Requires<ArgumentException>(input != null);
-            Contract.Ensures(Contract.Result<string>() != null);
+            if (input == null)
+              throw new ArgumentNullException(nameof(input));
 
             if (input.Length == 0)
             {
@@ -55,9 +57,11 @@
 
         public static byte[] Decode(string input)
         {
-            Contract.Requires<ArgumentNullException>(input != null);
-            Contract.Requires<ArgumentException>(Contract.ForAll(input.ToCharArray(), x => Alphabet.IndexOf(x) >= 0 || x == Padding));
-            Contract.Ensures(Contract.Result<byte[]>() != null);
+          if (input == null)
+            throw new ArgumentNullException(nameof(input));
+
+          if (!input.ToCharArray().All(x => Alphabet.IndexOf(x) >= 0 || x == Padding))
+            throw new ArgumentException(nameof(input));
 
             if (string.IsNullOrEmpty(input))
             {
