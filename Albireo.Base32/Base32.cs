@@ -64,7 +64,8 @@
 
             if (!input.ToCharArray().All(x => Alphabet.IndexOf(x) >= 0 || x == Padding))
             {
-                throw new ArgumentException(nameof(input));
+                var invalidChar = input.ToCharArray().First(x => Alphabet.IndexOf(x) == -1 && x != Padding);
+                throw new ArgumentException(string.Format("Character '{0}' is invalid in string.", invalidChar), nameof(input));
             }
 
             if (string.IsNullOrEmpty(input))
