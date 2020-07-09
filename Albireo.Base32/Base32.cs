@@ -55,17 +55,11 @@
             return new string(output);
         }
 
-        public static byte[] Decode(string input)
+        public static byte[] Decode(string input, bool ignoreCase = false)
         {
             if (input == null)
             {
                 throw new ArgumentNullException(nameof(input));
-            }
-
-            if (!input.ToCharArray().All(x => Alphabet.IndexOf(x) >= 0 || x == Padding))
-            {
-                var invalidChar = input.ToCharArray().First(x => Alphabet.IndexOf(x) == -1 && x != Padding);
-                throw new ArgumentException(string.Format("Character '{0}' is invalid in string.", invalidChar), nameof(input));
             }
 
             if (string.IsNullOrEmpty(input))
@@ -73,7 +67,18 @@
                 return new byte[0];
             }
 
-            input = input.TrimEnd(Padding).ToUpperInvariant();
+            input = input.TrimEnd(Padding);
+
+            if (ignoreCase)
+            {
+                input = input.ToUpperInvariant();
+            }
+
+            if (!input.ToCharArray().All(x => Alphabet.IndexOf(x) >= 0 || x == Padding))
+            {
+                var invalidChar = input.ToCharArray().First(x => Alphabet.IndexOf(x) == -1 && x != Padding);
+                throw new ArgumentException(string.Format("Character '{0}' is invalid in string.", invalidChar), nameof(input));
+            }
 
             var output = new byte[input.Length * BitsInBlock / BitsInByte];
             var position = 0;

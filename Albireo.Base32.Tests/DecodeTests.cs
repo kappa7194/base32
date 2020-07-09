@@ -1,5 +1,6 @@
 namespace Albireo.Base32.Tests
 {
+    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
@@ -45,6 +46,19 @@ namespace Albireo.Base32.Tests
         public void Vector7()
         {
             CollectionAssert.AreEqual(AsciiEncoding.GetBytes("foobar"), Base32.Decode("MZXW6YTBOI======"));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Vector7_Lowercase_BackwardsCompatibility()
+        {
+            CollectionAssert.AreEqual(AsciiEncoding.GetBytes("foobar"), Base32.Decode("mzxw6ytboi======"));
+        }
+
+        [TestMethod]
+        public void Vector7_Lowercase()
+        {
+            CollectionAssert.AreEqual(AsciiEncoding.GetBytes("foobar"), Base32.Decode("mzxw6ytboi======", true));
         }
     }
 }
