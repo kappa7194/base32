@@ -34,7 +34,6 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="..\LICENSE.txt">
       <Pack>True</Pack>
