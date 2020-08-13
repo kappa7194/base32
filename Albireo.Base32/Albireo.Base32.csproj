@@ -1,19 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net47;net46;net45;net40</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net472;net46;net45;net40</TargetFrameworks>
     <PackageId>Albireo.Base32</PackageId>
     <Version>1.1.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Albireo</Authors>
     <Company />
     <Product>Base32</Product>
-    <PackageLicenseUrl>https://github.com/kappa7194/base32/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/kappa7194/base32</PackageProjectUrl>
     <RepositoryUrl>https://github.com/kappa7194/base32</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>base32</PackageTags>
-    <Copyright>© 2018 Albireo</Copyright>
+    <Copyright>© 2020 Albireo</Copyright>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -29,5 +33,13 @@
     <LangVersion>7.3</LangVersion>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
