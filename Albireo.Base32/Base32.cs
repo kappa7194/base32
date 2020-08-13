@@ -10,7 +10,7 @@
         private const string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
         private const char Padding = '=';
 
-        public static string Encode(byte[] input)
+        public static string Encode(in byte[] input)
         {
             if (input == null)
             {
@@ -55,16 +55,11 @@
             return new string(output);
         }
 
-        public static byte[] Decode(string input)
+        public static byte[] Decode(in string input)
         {
             if (input == null)
             {
                 throw new ArgumentNullException(nameof(input));
-            }
-
-            if (!input.ToCharArray().All(x => Alphabet.IndexOf(x) >= 0 || x == Padding))
-            {
-                throw new ArgumentException(nameof(input));
             }
 
             if (string.IsNullOrEmpty(input))
@@ -72,13 +67,18 @@
                 return new byte[0];
             }
 
-            input = input.TrimEnd(Padding).ToUpperInvariant();
+            var inputChars = input.TrimEnd(Padding).ToUpperInvariant().ToCharArray();
 
-            var output = new byte[input.Length * BitsInBlock / BitsInByte];
+            if (inputChars.Any(x => Alphabet.IndexOf(x) == -1))
+            {
+                throw new ArgumentException(nameof(input));
+            }
+
+            var output = new byte[inputChars.Length * BitsInBlock / BitsInByte];
             var position = 0;
             byte workingByte = 0, bitsRemaining = BitsInByte;
 
-            foreach (var currentChar in input.ToCharArray())
+            foreach (var currentChar in inputChars)
             {
                 int mask;
                 var currentCharPosition = Alphabet.IndexOf(currentChar);

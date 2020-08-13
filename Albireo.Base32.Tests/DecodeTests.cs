@@ -46,5 +46,41 @@ namespace Albireo.Base32.Tests
         {
             CollectionAssert.AreEqual(AsciiEncoding.GetBytes("foobar"), Base32.Decode("MZXW6YTBOI======"));
         }
+
+        [TestMethod]
+        public void Vector2Lowercase()
+        {
+            CollectionAssert.AreEqual(AsciiEncoding.GetBytes("f"), Base32.Decode("my======"));
+        }
+
+        [TestMethod]
+        public void Vector3Lowercase()
+        {
+            CollectionAssert.AreEqual(AsciiEncoding.GetBytes("fo"), Base32.Decode("mzxq===="));
+        }
+
+        [TestMethod]
+        public void Vector4Lowercase()
+        {
+            CollectionAssert.AreEqual(AsciiEncoding.GetBytes("foo"), Base32.Decode("mzxw6==="));
+        }
+
+        [TestMethod]
+        public void Vector5Lowercase()
+        {
+            CollectionAssert.AreEqual(AsciiEncoding.GetBytes("foob"), Base32.Decode("mzxw6yq="));
+        }
+
+        [TestMethod]
+        public void Vector6Lowercase()
+        {
+            CollectionAssert.AreEqual(AsciiEncoding.GetBytes("fooba"), Base32.Decode("mzxw6ytb"));
+        }
+
+        [TestMethod]
+        public void Vector7Lowercase()
+        {
+            CollectionAssert.AreEqual(AsciiEncoding.GetBytes("foobar"), Base32.Decode("mzxw6ytboi======"));
+        }
     }
 }
